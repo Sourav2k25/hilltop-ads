@@ -1,0 +1,300 @@
+<html lang="en">
+    <head>
+        <style data-merge-styles="true"></style>
+        <style data-merge-styles="true"></style>
+        <style data-merge-styles="true"></style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ad Reward System Apps</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f3f4f6;
+                background-image: linear-gradient(315deg, #f3f4f6 0%, #e2e8f0 74%);
+                padding: 20px;
+            }
+            header {
+                background: linear-gradient(145deg, #007bff, #0056b3);
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+                font-size: 28px;
+                font-weight: bold;
+                color: #fff;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                position: fixed;
+                top: 0;
+                z-index: 10;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                cursor: pointer;
+            }
+            .app-container {
+                text-align: center;
+                background: linear-gradient(145deg, #ffffff, #ececec);
+                padding: 40px;
+                border-radius: 20px;
+                width: 95%;
+                max-width: 500px;
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+                margin-top: 120px;
+                transition: transform 0.4s ease, box-shadow 0.3s ease;
+            }
+            .app-container:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+            h2 {
+                font-size: 30px;
+                color: #333;
+                margin-bottom: 25px;
+                text-shadow: 2px 2px 4px #ccc;
+            }
+            .token-section {
+                margin-bottom: 30px;
+                background: linear-gradient(145deg, #e0f2fe, #d0e6f7);
+                padding: 20px;
+                border-radius: 15px;
+                border: 1px solid #90cdf4;
+                font-size: 22px;
+                font-weight: bold;
+                color: #007bff;
+                box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            .developer-label {
+                display: inline-block;
+                padding: 12px 30px;
+                font-size: 16px;
+                color: #444;
+                background: linear-gradient(145deg, #f3faff, #e3f6ff);
+                border: 1px solid #ccc;
+                border-radius: 15px;
+                margin-bottom: 30px;
+                font-weight: bold;
+                text-decoration: none;
+                transition: color 0.3s, transform 0.3s;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            }
+            .developer-label:hover {
+                color: #007bff;
+                transform: translateY(-3px);
+            }
+            .ad-button, .share-button {
+                width: 100%;
+                padding: 15px;
+                font-size: 20px;
+                color: #fff;
+                margin-top: 15px;
+                border: none;
+                border-radius: 15px;
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.3s;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            }
+            .blue-button { background: linear-gradient(145deg, #007bff, #0056b3); }
+            .green-button { background: linear-gradient(145deg, #16a34a, #28c76f); }
+            .yellow-button { background: linear-gradient(145deg, #f59e0b, #ffca28); }
+            .share-button { background: linear-gradient(145deg, #1e40af, #3b82f6); }
+            .menu-container {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 30px;
+                width: 100%;
+            }
+            .menu-button {
+                background: linear-gradient(145deg, #f3faff, #e3f6ff);
+                color: #444;
+                padding: 10px 20px;
+                font-size: 18px;
+                font-weight: bold;
+                border: none;
+                border-radius: 15px;
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.3s;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+                text-transform: uppercase;
+            }
+            .menu-button:hover {
+                background: linear-gradient(145deg, #e3f6ff, #d2e9f3);
+                transform: translateY(-3px);
+            }
+            .ad-button:hover, .share-button:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+            }
+            .ad-button:active, .share-button:active {
+                transform: scale(0.95);
+            }
+        </style>
+    </head>
+    <body data-new-gr-c-s-check-loaded="14.1211.0" data-gr-ext-installed="">
+        <header onclick="openAdsterraLink()">
+            Ad Network Partner: Adsterra
+        </header>
+        <div class="app-container">
+            <h2>Watch Ads and Earn Rewards!</h2>
+            <div class="token-section" id="tokenCount">Tokens: 30</div>
+            <a class="developer-label" href="https://t.me/Sourav2k233" target="_blank">DEVELOPER BY Sourav</a>
+            <button class="ad-button blue-button" onclick="showRewardedAd()">Show Ad 1</button>
+            <button class="ad-button green-button" onclick="showRewardedAd()">Show Ad 2</button>
+            <button class="ad-button yellow-button" onclick="showRewardedAd()">Show Ad 3</button>
+            <button class="share-button" onclick="shareLink()">Share</button>
+        </div>
+        <div class="menu-container">
+            <button class="menu-button" onclick="navigateTo('home')">Home</button>
+            <button class="menu-button" id="withdrawButton" onclick="navigateTo('withdraw')">Withdraw</button>
+            <button class="menu-button" onclick="navigateTo('info')">Info</button>
+        </div>
+    
+        <script>
+            let tokens = localStorage.getItem('tokens') ? parseInt(localStorage.getItem('tokens')) : 0;
+            document.getElementById('tokenCount').innerText = `Tokens: ${tokens}`;
+    
+            function showRewardedAd() {
+                const popup = document.createElement('div');
+                popup.innerText = "Checking the link... Please wait.";
+                popup.style.position = 'fixed';
+                popup.style.top = '50%';
+                popup.style.left = '50%';
+                popup.style.transform = 'translate(-50%, -50%)';
+                popup.style.backgroundColor = '#fff';
+                popup.style.color = '#007bff';
+                popup.style.padding = '20px';
+                popup.style.borderRadius = '10px';
+                popup.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+                popup.style.fontSize = '18px';
+                popup.style.fontWeight = 'bold';
+                popup.style.zIndex = '1000';
+                document.body.appendChild(popup);
+    
+                setTimeout(() => {
+                    window.open("https://superficial-sensitive.com/bz3/VF0.PH3mpvvpbBmjV/JtZuDv0V1pOYDmYk3MNBjxYs2/LmTFUr4oNVjHcG2wNzjIcM", '_blank');
+                    document.body.removeChild(popup);
+                    awardTokens(10); // Award 10 tokens for watching an ad
+                }, 2000);
+            }
+    
+            function openAdsterraLink() {
+                window.open("https://beta.publishers.adsterra.com/referral/qemxLqC1er", '_blank');
+            }
+    
+            function shareLink() {
+                const shareUrl = 'http://t.me/adsterraoo_bot/adsterra';
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Ad Reward System',
+                        text: 'Check out this amazing ad reward system!',
+                        url: shareUrl
+                    }).then(() => {
+                        console.log('Thanks for sharing!');
+                        awardTokens(5); // Award 5 tokens for sharing
+                    }).catch((error) => {
+                        console.error('Error sharing:', error);
+                    });
+                } else {
+                    // Fallback for browsers that do not support Web Share API
+                    const fallbackContainer = document.createElement('div');
+                    fallbackContainer.style.position = 'fixed';
+                    fallbackContainer.style.top = '50%';
+                    fallbackContainer.style.left = '50%';
+                    fallbackContainer.style.transform = 'translate(-50%, -50%)';
+                    fallbackContainer.style.backgroundColor = '#fff';
+                    fallbackContainer.style.color = '#333';
+                    fallbackContainer.style.padding = '20px';
+                    fallbackContainer.style.borderRadius = '10px';
+                    fallbackContainer.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+                    fallbackContainer.style.fontSize = '16px';
+                    fallbackContainer.style.zIndex = '1000';
+                    fallbackContainer.style.textAlign = 'center';
+    
+                    const fallbackText = document.createElement('p');
+                    fallbackText.innerText = 'Copy the link below to share:';
+                    fallbackContainer.appendChild(fallbackText);
+    
+                    const linkElement = document.createElement('input');
+                    linkElement.value = shareUrl;
+                    linkElement.style.width = '100%';
+                    linkElement.style.marginBottom = '10px';
+                    linkElement.style.border = '1px solid #ccc';
+                    linkElement.style.borderRadius = '5px';
+                    linkElement.style.padding = '5px';
+                    linkElement.readOnly = true;
+                    fallbackContainer.appendChild(linkElement);
+    
+                    const copyButton = document.createElement('button');
+                    copyButton.innerText = 'Copy Link';
+                    copyButton.style.marginTop = '10px';
+                    copyButton.style.padding = '10px 20px';
+                    copyButton.style.backgroundColor = '#007bff';
+                    copyButton.style.color = '#fff';
+                    copyButton.style.border = 'none';
+                    copyButton.style.borderRadius = '5px';
+                    copyButton.style.cursor = 'pointer';
+                    copyButton.onclick = () => {
+                        linkElement.select();
+                        document.execCommand('copy');
+                        alert('Link copied to clipboard. Please manually share it and then confirm to get tokens.');
+                    };
+                    fallbackContainer.appendChild(copyButton);
+    
+                    const confirmButton = document.createElement('button');
+                    confirmButton.innerText = 'Confirm Share';
+                    confirmButton.style.marginTop = '10px';
+                    confirmButton.style.marginLeft = '10px';
+                    confirmButton.style.padding = '10px 20px';
+                    confirmButton.style.backgroundColor = '#28c76f';
+                    confirmButton.style.color = '#fff';
+                    confirmButton.style.border = 'none';
+                    confirmButton.style.borderRadius = '5px';
+                    confirmButton.style.cursor = 'pointer';
+                    confirmButton.onclick = () => {
+                        awardTokens(5);
+                        document.body.removeChild(fallbackContainer);
+                        alert('Tokens awarded for sharing!');
+                    };
+                    fallbackContainer.appendChild(confirmButton);
+    
+                    const closeButton = document.createElement('button');
+                    closeButton.innerText = 'Close';
+                    closeButton.style.marginTop = '10px';
+                    closeButton.style.marginLeft = '10px';
+                    closeButton.style.padding = '10px 20px';
+                    closeButton.style.backgroundColor = '#f44336';
+                    closeButton.style.color = '#fff';
+                    closeButton.style.border = 'none';
+                    closeButton.style.borderRadius = '5px';
+                    closeButton.style.cursor = 'pointer';
+                    closeButton.onclick = () => document.body.removeChild(fallbackContainer);
+                    fallbackContainer.appendChild(closeButton);
+    
+                    document.body.appendChild(fallbackContainer);
+                }
+            }
+    
+            function awardTokens(amount) {
+                tokens += amount;
+                localStorage.setItem('tokens', tokens);
+                document.getElementById('tokenCount').innerText = `Tokens: ${tokens}`;
+            }
+    
+            function navigateTo(destination) {
+                if (destination === 'withdraw') {
+                    if (tokens >= 5000) {
+                        window.open("https://www.google.com", '_blank');
+                    } else {
+                        alert('You need at least 5000 tokens to withdraw.');
+                    }
+                } else {
+                    console.log(`Navigating to ${destination}`);
+                }
+            }
+        </script>
+    
+    </body>
+</html>
